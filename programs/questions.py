@@ -12,8 +12,9 @@
     # one("punctation, or something?", " ,?") → "punctuation__or_something_"
 
 def one(word, chars):
-    if chars[0:] == word[0:]:
-        return word.replace()
+    for char in chars: 
+        word = word.casefold().replace(char, '_')
+    return word
 
     # <QUESTION 2>
 
@@ -31,12 +32,16 @@ def one(word, chars):
     # There are 86,400 seconds in a day, and 3600 seconds in an hour
 
 def two(total_seconds):
-    time = ('w', 'x', 'y', 'z')
-    w = 86400/total_seconds
-    x = 3600/total_seconds
-    y = 60/total_seconds
-    z = total_seconds
-    return time
+    days = total_seconds // 86400
+    total_seconds = days % 86400 
+
+    hours = total_seconds // 3600 
+    total_seconds = hours % 3600 
+
+    minutes = total_seconds // 60 
+    total_seconds = minutes % 60 
+
+    
 
     # <QUESTION 3>
 
